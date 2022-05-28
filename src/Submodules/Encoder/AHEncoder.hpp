@@ -31,7 +31,7 @@ class AHEncoder {
      * The internal pull-up resistors will be enabled on these pins upon
      * initialization (when calling the `begin` method).
      */
-    AHEncoder(uint8_t pinA, uint8_t pinB);
+    AHEncoder(ArduinoPin_t pinA, ArduinoPin_t pinB);
 
     /// Copy constructor: copying an Encoder object is semantically meaningless,
     /// so it has been deleted.
@@ -77,7 +77,7 @@ class AHEncoder {
     void detachInterruptCtx(int interrupt);
 
   private:
-    uint8_t pins[2];
+    ArduinoPin_t pins[2];
     uint8_t interrupts_in_use = 0;
     uint8_t state = 0;
     DirectPinRead direct_pins[2];

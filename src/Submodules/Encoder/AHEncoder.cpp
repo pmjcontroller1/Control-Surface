@@ -6,7 +6,7 @@
 
 BEGIN_CS_NAMESPACE
 
-AHEncoder::AHEncoder(uint8_t pinA, uint8_t pinB)
+AHEncoder::AHEncoder(ArduinoPin_t pinA, ArduinoPin_t pinB)
     : pins {pinA, pinB}, direct_pins {direct_pin_read(pinA),
                                       direct_pin_read(pinB)} {
     // It's much faster to use the GPIO registers directly, rather than
